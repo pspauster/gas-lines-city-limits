@@ -1,0 +1,328 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Company":"National Grid",
+    "Pipeline":"North Brooklyn Pipeline or Metropolitan Reliability Infrastructure Project",
+    "Project Name":"Metropolitan Reliability Pipeline Project or North Brooklyn Pipeline Project",
+    "Location":"287 Maspeth Ave, Brooklyn, NY 11211",
+    "Status":"Not active",
+    "Type":"Pipeline expansion",
+    "What's the plan?":"Expand a stretch of pipeline at a liquified natural gas storage facility in Greenpoint, Brooklyn. And build two new vaporizers, a machine that transforms liquified natural gas into the gaseous formused for cooking and heating.",
+    "What Now?":"National Grid halted pipeline expansion and had their request for the vaporizers, which was submitted in the fall of 2022, was denied in March of 2023 after activists in the community led a campaign to stop it. ",
+    "Additional geometry":"",
+    "Geo Note":"New line"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.84743,42.28084 ]
+    },
+    "properties": {
+    "Company":"Iroquois Pipeline Operating Company ",
+    "Pipeline":"Iroquois Pipeline",
+    "Project Name":"Iroquois ExC Project",
+    "Location":"915 Schoharie Turnpike, Athens, NY 12015",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas to NYC by expanding the Athens compressor station, a facility along the pipeline route that boosts the flow of gas. This is one of four compressor stations the company seeks to expand.",
+    "What Now?":"The Iroquois Pipeline Company was awarded a state air permit from New York's Department of Environmental Conservation (DEC) on February 7, 2025 and given the green light to move forward with the project.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.58692,41.68735 ]
+    },
+    "properties": {
+    "Company":"Iroquois Pipeline Operating Company ",
+    "Pipeline":"Iroquois Pipeline",
+    "Project Name":"Iroquois ExC Project",
+    "Location":"186 Dover Furnace Rd, Dover Plains, NY 12522",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas to NYC by expanding the Dover compressor station, a facility along the pipeline route that boost the flow of gas. This is one of four compressor stations the company seeks to expand.",
+    "What Now?":"The Iroquois Pipeline Company was awarded a state air permit from New York's Department of Environmental Conservation (DEC) on February 7, 2025 and given the green light to move forward with the project.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.37213,41.43321 ]
+    },
+    "properties": {
+    "Company":"Enbridge and Iroquois Pipeline Company",
+    "Pipeline":"Iroquois Pipeline",
+    "Project Name":"Iroquois ExC Project",
+    "Location":"78 High Meadow Ln, Brookfield, CT 06804",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas to NYC by expanding the Brookfield compressor station, a facility along the pipeline route that boost the flow of gas, to more than double its size. This is one of four compressor stations the company seeks to expand.",
+    "What Now?":"The Iroquois Pipeline Company was awarded a state air permit from New York's Department of Environmental Conservation (DEC) on February 7, 2025 and given the green light to move forward with the project.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.097045,41.234965 ]
+    },
+    "properties": {
+    "Company":"Iroquois Pipeline Operating Company",
+    "Pipeline":"Iroquois Pipeline",
+    "Project Name":"Iroquois ExC Project",
+    "Location":"840 Oronoque Road Milford, CT 06461",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas to NYC by expanding the Milford compressor station, a facility along the pipeline route that boost the flow of gas. This is one of four compressor stations the company seeks to expand.",
+    "What Now?":"The Iroquois Pipeline Company was awarded a state air permit from New York's Department of Environmental Conservation (DEC) on February 7, 2025 and given the green light to move forward with the project.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Company":"Enbridge",
+    "Pipeline":"Algonquin Gas Transmission Pipeline",
+    "Project Name":"Project Maple",
+    "Location":"Buchanan, New York",
+    "Status":"In Progress",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"To expand the Algonquin Gas Transmission Pipeline by 25 percent through a proposal, still in the early stages of development, known as \"Project Maple.\"",
+    "What Now?":"Enbridge has begun to solicit bids from utility companies for icreased gas supply. They are yet to apply for any permits to move forward with the plans.",
+    "Additional geometry":"",
+    "Geo Note":"Entire line"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.32439,41.13736 ]
+    },
+    "properties": {
+    "Company":"Tennessee Gas Pipeline Company",
+    "Pipeline":"Tennessee Gas Pipeline ",
+    "Project Name":"East 300 Upgrade Project",
+    "Location":"960 Burnt Meadow Road, Township of West Milford, Passaic County, N.J",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas through to Westchester in New York by building a new compressor station, a facility along the pipeline route that boosts the flow of gas.",
+    "What Now?":"In October of 2023, the New Jersey's Department of Environmental Conservation gave the Tenesse Pipeline Company the green light to move forward with the project despite a Superior Court ruling that it violated a law that protects the State's natural resources. The project's facility has been placed in service.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.64671,41.24184 ]
+    },
+    "properties": {
+    "Company":"Tennessee Gas Pipeline Company",
+    "Pipeline":"Tennessee Gas Pipeline ",
+    "Project Name":"East 300 Upgrade Project",
+    "Location":"164 Libertyville Rd County Rte, Wantage Township, NJ 07461",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas through to Westchester in New York by trippling the size of an existing compressor station, which is a facility along the pipeline route that boosts the flow of gas.",
+    "What Now?":"In October of 2023, the New Jersey's Department of Environmental Conservation gave the Tenesse Pipeline Company the green light to move forward with the project despite a Superior Court ruling that it violated a law that protects the State's natural resources. The project's facility has been placed in service.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -75.59908,41.71028 ]
+    },
+    "properties": {
+    "Company":"Tennessee Gas Pipeline Company",
+    "Pipeline":"Tennessee Gas Pipeline ",
+    "Project Name":"East 300 Upgrade Project",
+    "Location":"124 Tennessee Gas RoadWest Clifford, PA 18470",
+    "Status":"Approved",
+    "Type":"Enhancement of pipeline capacity",
+    "What's the plan?":"Push more gas through to Westchester in New York by upgrading the company's Pennsylvania based compressor station, which is a facility along the pipeline route that boosts the flow of gas.",
+    "What Now?":"The project's facility has been placed in service, according to a December 2024 report issued by the Tennessee Gas Pipeline company to the Federal Energy Regulatory Commission (FERC).",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Company":"Southern Tear Solutions",
+    "Pipeline":"Not applicable",
+    "Project Name":"Southern Tier CO2 to Clean Energy Solutions",
+    "Location":"Broome, Tioga, and Chemung counties in NY",
+    "Status":"Not active",
+    "Type":"Power Plant revamp",
+    "What's the plan?":"Introduce a new fracking technique in New York that uses carbon dioxide (CO2) instead of water to extract gas from underground",
+    "What Now?":"Governor Kathy Hochul signed legislation that makes CO2 fracking ilegal. Sothern Tear Solutions has not moved forward with their plans so far. ",
+    "Additional geometry":"",
+    "Geo Note":"Not a specific location"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.97692,41.56587 ]
+    },
+    "properties": {
+    "Company":"Danskammer LLC ",
+    "Pipeline":"Central Hudson Gas System",
+    "Project Name":"Danskammer Energy Project",
+    "Location":"994 River Rd, Newburgh, NY 12550",
+    "Status":"Not active",
+    "Type":"Power Plant revamp",
+    "What's the plan?":"To transform a peaker plant that only functioned during peak demand into a fullservice power plant.",
+    "What Now?":"In 2021, the DEC denied an air permit the company needed to move forward with the plans, citing that the project was unable to \"satisfy\" elements of the State's Climate Act. Danskammer tried to overturn the decision with a series of lawsuits but in June the company withdrew their attempts to continute to defy the decision.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -73.905005,40.778801 ]
+    },
+    "properties": {
+    "Company":"NRG - Astoria Gas Turbine Power, LLC",
+    "Pipeline":"Con Edison Pipeline",
+    "Project Name":"Astoria Replacement Project",
+    "Location":"31-1 20th Ave, Astoria, NY 11105",
+    "Status":"Not active",
+    "Type":"Power Plant revamp",
+    "What's the plan?":"Replace a 50-year-old high-polluting “peaker plant” with a more modern fracked gas facility.",
+    "What Now?":"In 2021, DEC denied an air permit needed for the project and the company has not sought to overturn that. In its denial, the environmental agency said the project was unable to \"satisfy\" elements of the State's Climate Act.",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.014709,40.651234 ]
+    },
+    "properties": {
+    "Company":"Astoria Generationg Company",
+    "Pipeline":"Transco Pipeline",
+    "Project Name":"Gowanus Repowering Project",
+    "Location":"29th St & 2nd Ave Brooklyn NY 11232",
+    "Status":"Not active",
+    "Type":"Power Plant revamp",
+    "What's the plan?":"Transform an existing fracked gas peaker plant into a more modern and efficient power generating station in Sunset Park. ",
+    "What Now?":"Shortly after the State issued denials for the expansion of similar projects in Astoria and Gowanus, the company withdrew their proposal on December 15, 2021. ",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Company":"Williams Transco",
+    "Pipeline":"Transco pipeline",
+    "Project Name":"Williams Pipeline Project",
+    "Location":"Rockaway Lateral, NYC",
+    "Status":"Not active",
+    "Type":"Pipeline expansion",
+    "What's the plan?":"Build the Williams Pipeline, a gas infrastructure project that would start in Pennsylvania, make its way through New Jersey and end in New York City’s Rockaways. It would have connected to the Rockaway Lateral, a pipeline that runs under Jacob Riis Park and Jamaica Bay",
+    "What Now?":"After three attemts to get permits to build their pipeline, the company finally gave up and notified state authorities in May of 2024 that it would let a 2019 federal permit that green-lit the project expire and would not be seeking an extension.",
+    "Additional geometry":"(40.05046980147888, -75.58820328224736), (40.40372558728044, -74.5983328836057)",
+    "Geo Note":"Two loops plus compressor station"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  { }
+    },
+    "properties": {
+    "Company":"Valley Energy Inc",
+    "Pipeline":"Mountain Valley Pipeline",
+    "Project Name":"Unknown. See more here: https://documents.dps.ny.gov/public/Common/ViewDoc.aspx?DocRefId={F026F18E-0000-C336-9E38-8514A87BA39F}",
+    "Location":"County Route 60, Chemung, NY",
+    "Status":"In Progress",
+    "Type":"Pipeline expansion",
+    "What's the plan?":"A petiton was filed in April of 2024 to bring more gas to the town of Town of Chemung by constructing a pipeline that will accommodate the gas generated from a  renewable natural gas landfill (“RNG”) to be built by WB Chemung.",
+    "What Now?":"A public hearing to discuss the project was held in December of 2024.",
+    "Additional geometry":"",
+    "Geo Note":"New Line"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -75.58820328,40.0504698 ]
+    },
+    "properties": {
+    "Company":"",
+    "Pipeline":"",
+    "Project Name":"",
+    "Location":"",
+    "Status":"",
+    "Type":"",
+    "What's the plan?":"",
+    "What Now?":"",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -74.59833288,40.40372559 ]
+    },
+    "properties": {
+    "Company":"",
+    "Pipeline":"",
+    "Project Name":"",
+    "Location":"",
+    "Status":"",
+    "Type":"",
+    "What's the plan?":"",
+    "What Now?":"",
+    "Additional geometry":"",
+    "Geo Note":""
+    }
+  }
+]
+}
