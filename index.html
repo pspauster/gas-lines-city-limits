@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='utf-8' />
-    <title>Mapbox Storytelling</title>
+    <title>City Limits</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link rel="icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
@@ -568,6 +568,8 @@
                     visibility: 'visible'
                 }
             })
+
+
             map.addLayer({
                 'id': 'ny-pipelines-iroquois',
                 'type': 'line',
@@ -596,7 +598,7 @@
                 'layout': {
                     visibility: 'visible'
                 },
-                filter: [
+                'filter': [
                     "in", ["get", "Operator"], ["literal", ["Iroquois Gas Trans Co", "Transcontinental Gas PL", "Algonquin Gas Trans Co", "Tennessee Gas Pipeline", "National Grid", "Valley Energy Inc"]]
                 ]
                 // filter: [
@@ -724,7 +726,7 @@
         map.on("load", function () {
             map2.addSource('interactive-pipelines', {
                 type: 'geojson',
-                data: 'data/ny-pipelines.geojson',
+                data: 'data/gas_infra.geojson',
                 //generateID: true
             })
             // add pipelines
@@ -733,17 +735,67 @@
                 'type': 'line',
                 'source': 'interactive-pipelines',
                 'paint': {
-                    'line-color': '#FF0000',
                     'line-width': 3,
                     'opacity': 0,
+                    'line-color':
+                        ['match', ['get', 'Proposed'],
+                            'Yes', '#FF0000',
+                        /*other*/ '#000000']
                 },
                 layout: {
                     visibility: 'visible'
                 }
             })
+            // add pipelines
+            map2.addLayer({
+                'id': 'compressor-int',
+                'type': 'circle',
+                'source': 'interactive-pipelines',
+                'paint': {
+                    'circle-stroke-width': 3,
+                    'opacity': 0,
+                    'circle-stroke-color': [
+                        'case',
+                        ['boolean', ['feature-state', 'hover'], false],
+                        "white", //add white outline on hover
+                        ['match', //otherwise outline is the same as circle color
+                            ['get', 'Proposed'],
+                            'Yes',
+                            'red',
+                    /*other*/ '#000000']
+                    ],
+                    'circle-color': ['match', //otherwise outline is the same as circle color
+                        ['get', 'Proposed'],
+                        'Yes',
+                        'red',
+                    /*other*/ '#000000']
+                },
+                'filter': ['==', "geo_type", "point"],
+                'layout': {
+                    visibility: 'visible'
+                }
+            })
         }
         )
-        //add pipelines
+
+        map.on('click', 'compressor-int', (e) => {
+
+            // // conditional logic for sentence
+            // var singPlural = "people"
+            // var verb = "were"
+            // if (e.features[0].properties.number_of_persons_killed === '1') {
+            //     var singPlural = "person"
+            //     var verb = "was"
+            // }
+
+
+            //popups
+            const popup = new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(`${e.features[0].properties.Proposed} killed by a ${e.features[0].properties.Operator} due to `)
+                .addTo(map)
+        });
+
 
 
     </script>
