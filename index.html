@@ -799,10 +799,52 @@
                 //generateID: true
             })
             map2.addLayer({
-                'id':'interactive',
-                'type':'line',
-                'source':'interactive-pipelines'
-            })
+                'id': 'interactive',
+                'type': 'line',
+                'source': 'interactive-pipelines',
+                'paint': {
+                    'line-color': [
+                        'match',
+                        ['get', 'status'],
+                        'Approved', '#00FF00', // Green
+                        'In Progress', '#FFFF00', // Yellow
+                        'Not active', '#FF0000', // Red
+                        '#000000' // Default color (black) for unexpected values
+                    ],
+                    'line-width': 2 // Adjust line width if needed
+                }
+            });
+            map2.addLayer({
+                'id': 'interactive-markers',
+                'type': 'circle',
+                'source': 'interactive-pipelines',
+                'filter': [
+                    'all',
+                    ['==', ['get', 'geo_type'], 'point'],  // Only "point" features
+                    ['!=', ['get', 'geo_type'], null]       // Exclude null values
+                ], // Filter to only include points
+                'paint': {
+                    'circle-color': [
+                        'match',
+                        ['get', 'status'],
+                        'Approved', '#00FF00', // Green
+                        'In Progress', '#FFFF00', // Yellow
+                        'Not active', '#FF0000', // Red
+                        '#000000' // Default color (black) for unexpected values
+                    ],
+                    'circle-radius': 5, // Adjust line width if needed
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': [
+                        'match',
+                        ['get', 'status'],
+                        'approved', '#00FF00', // Green
+                        'in progress', '#FFFF00', // Yellow
+                        'not active', '#FF0000', // Red
+                        '#000000' // Default color (black) for unexpected values
+                    ]
+                }
+            });
+
 
             // map2.addSource('ny-pipelines-new', {
             //     type: "geojson",
