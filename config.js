@@ -83,7 +83,7 @@ var config = {
             ]
         },
         {
-            id: 'photo-title',
+            id: 'photo-title-2',
             alignment: 'center',
             hidden: false,
             //title: 'New York States',
@@ -145,12 +145,12 @@ var config = {
             ]
         },
         {
-            id: 'photo-law',
+            id: 'ny-state',
             alignment: 'center',
             hidden: false,
             //title: 'New York States',
             //type: 'image',
-            imagebackground: 'assets/clcpa_bill_signing_sjm_in_nyc_copy.jpeg',
+            //imagebackground: 'assets/clcpa_bill_signing_sjm_in_nyc_copy.jpeg',
             description: 'Back in 2019, when New York passed its landmark climate law, the CLCPA, it became a shining example of national climate action. The law established a roadmap for the State to mostly phase out planet-warming fossil fuels like gas by 2050 and transition to clean energy instead.',
             location: {
                 center: [-74.0179, 41.7994],
@@ -181,12 +181,20 @@ var config = {
                 {
                     layer: 'ny-proposed-points',
                     opacity: 0,
+                },
+                {
+                    layer:'state',
+                    opacity: .25
+                },
+                {
+                    layer: 'ny-pipelines-proposed-new',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'ny-pipelines-all',
-                    opacity: 1,
+                    layer:'state',
+                    opacity: .25
                 }
             ]
         },
@@ -212,6 +220,14 @@ var config = {
                     opacity: 1,
                 },
                 {
+                    layer:'state',
+                    opacity: .25
+                },
+                {
+                    layer: 'state',
+                    opacity: 0.25
+                },
+                {
                     layer: 'ny-pipelines-proposed',
                     opacity: 0,
                 },
@@ -232,6 +248,14 @@ var config = {
                 {
                     layer: 'ny-pipelines-all',
                     opacity: 0,
+                },
+                {
+                    layer: 'state',
+                    opacity: 0.25
+                },
+                {
+                    layer:'state',
+                    opacity: .25
                 }
             ]
         },
@@ -252,6 +276,10 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                {
+                    layer: 'state',
+                    opacity: 0.25
+                },
                 {
                     layer: 'ny-pipelines-iroquois',
                     opacity: 1,
@@ -290,12 +318,20 @@ var config = {
             callback: '',
             onChapterEnter: [
                 {
+                    layer: 'state',
+                    opacity: 0.25
+                },
+                {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
                 },
                 {
                     layer: 'ny-proposed-points',
                     opacity: 1,
+                },
+                {
+                    layer: 'ny-pipelines-proposed-new',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -306,6 +342,14 @@ var config = {
                 {
                     layer: 'ny-proposed-points',
                     opacity: 0,
+                },
+                {
+                    layer:'state',
+                    opacity: 0
+                },
+                {
+                    layer: 'ny-pipelines-proposed-new',
+                    opacity: 0
                 }
             ]
         },
@@ -326,6 +370,10 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                {
+                    layer: 'state',
+                    opacity: 0,
+                },
                 {
                     layer: 'ny-pipelines-proposed',
                     opacity: 1,
