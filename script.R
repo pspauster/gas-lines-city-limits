@@ -12,6 +12,8 @@ points_sf <- points %>%
   filter(!is.na(latitude)) %>% 
   st_as_sf(coords=c("longitude", "latitude"), crs = st_crs(4326))
 
+write_sf(points_sf, "data/gas_infra_points.geojson", append = F)
+
 mapview(points_sf)
 
 lines_info <- points %>% filter(is.na(latitude))

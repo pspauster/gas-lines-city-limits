@@ -62,14 +62,69 @@
 
         }
 
-        #map2 {
+        .container-interactive {
+            position: relative;
             height: 80vh;
             width: 80vw;
-            position: relative;
             margin: auto;
             background-color: white;
-            /*padding-left: 10vw;
+        }
+
+        .sidebar {
+            position: absolute;
+            width: 250px;
+            z-index: 10;
+            background: #444;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-left: 15px;
+            font-family: "Neue Haas Grotesk Text Pro";
+            color: white
+        }
+
+        .title-interactive {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-family: "Opinion Pro Bold";
+        }
+
+        .description-interactive p {
+            font-size: 10px;
+            margin-bottom: 10px;
+            line-height: normal;
+            padding: 5px;
+        }
+
+        #legend {
+            padding: 5px;
+            /* line-height: 14px; */
+            font-size: 14px;
+        }
+
+        #map2 {
+            /* height: 80vh; */
+            /* width: 80vw; */
+            height: 100%;
+            width: 100%;
+            position: absolute
+                /* position: relative; */
+                /* margin: auto; */
+                /* background-color: white; */
+                /*padding-left: 10vw;
             padding-right: 10vw;*/
+        }
+
+        .legend-box {
+            border: none;
+            border-radius: 5px;
+        }
+
+        .subhead {
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 12px;
         }
 
         p {
@@ -115,19 +170,26 @@
 
         #footer {
             width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
+            min-height: 2vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
             text-align: center;
-            line-height: 25px;
-            font-size: 13px;
             position: relative;
             z-index: 5;
+        }
+
+        #footer p {
+            line-height: 15px;
+            font-size: 10px;
         }
 
         #features {
             padding-top: 10vh;
             padding-bottom: 10vh;
+        }
+
+        h4 {
+            margin: 0
         }
 
         .hidden {
@@ -171,8 +233,8 @@
         }
 
         .step p {
-            font-size: 25px;
-            line-height: 40px;
+            font-size: 20px;
+            line-height: 30px;
         }
 
         .step.active {
@@ -180,7 +242,7 @@
         }
 
         .step div {
-            padding: 25px 50px;
+            padding: 10px 20px;
             line-height: 25px;
             font-size: 18px;
         }
@@ -197,6 +259,100 @@
             margin: 0;
         }
 
+        .mapboxgl-popup-content {
+            background-color: #444;
+            width: 300px
+        }
+
+        .mapboxgl-popup-close-button {
+            color: #fafafa
+        }
+
+        .popup-container {
+            font-family: "Neue Haas Grotesk Text Pro";
+            background-color: #444;
+            color: #fafafa
+        }
+
+        .popup-table {
+            width: 100%;
+            /* Adjust width as needed */
+            table-layout: fixed;
+            /* Ensures the set column widths take effect */
+        }
+
+        .popup-table td:first-child {
+            width: 67%;
+            /* Column 1 (1/3 of the table width) */
+        }
+
+        .popup-table td:last-child {
+            width: 33%;
+            /* Column 2 (2/3 of the table width) */
+        }
+
+        .popup-title {
+            font-family: "Opinion Pro Bold";
+            font-size: 18px
+        }
+
+        .faint {
+            font-size: 8px;
+            font-style: italic;
+            font-weight: 200;
+            text-align: right;
+        }
+
+        .popup-header {
+            cursor: pointer;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .popup-arrow {
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .popup-section {
+            font-size: 10px;
+            font-weight: 300;
+
+        }
+
+        .popup-status {
+            text-align: right;
+        }
+
+        .popup-container td .popup-status {
+            color: #0071bc
+        }
+
+        tr span {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .legend-item {
+            font-size: 12px;
+        }
+
+        .legend-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .legend-line {
+            width: 2px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
         @media (max-width: 750px) {
 
             .centered,
@@ -206,6 +362,39 @@
                 width: 90vw;
                 margin: 0 auto;
             }
+
+            .mapboxgl-popup-content {
+                background-color: #444;
+                width: 200px
+            }
+
+            .container-interactive {
+                display: flex;
+                flex-direction: column-reverse;
+
+            }
+
+            .sidebar {
+                position: relative;
+                height: 25%;
+                width: 100%;
+                margin: 0;
+                overflow-y: scroll;
+                flex-grow: 0;
+                box-sizing: border-box;
+            }
+
+            .step p {
+                font-size: 15px;
+                line-height: 20px;
+            }
+
+            .step div {
+                padding: 7px 10px;
+                line-height: 20px;
+                font-size: 12px;
+            }
+
         }
 
         /* Fix issue on mobile browser where scroll breaks  */
@@ -262,7 +451,36 @@
             eros, laoreet ut pharetra vitae, gravida quis nunc. Aenean arcu ante, fermentum eget dignissim quis, aliquet
             vulputate leo. Ut vulputate metus in justo molestie, eu vestibulum augue suscipit.
         </p>
-        <div id="map2"></div>
+        <div class="container-interactive">
+            <div class="sidebar">
+                <div class="title-interactive">
+                    Gas Projects in New York State
+                </div>
+                <div class="description-interactive">
+                    <p>Projects proposed affecting New York State since 2019. Select a project to learn more</p>
+                </div>
+                <div class="legend-box">
+                    <div id="legend">
+                        <div class="legend-item">
+                            <span class="legend-circle" style="background-color: #00FF00;"></span>
+                            <span class="legend-line" style="background-color: #00FF00;"></span>
+                            Approved
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-circle" style="background-color: #FFFF00;"></span>
+                            <span class="legend-line" style="background-color: #FFFF00;"></span>
+                            In Progress
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-circle" style="background-color: #FF0000;"></span>
+                            <span class="legend-line" style="background-color: #FF0000;"></span>
+                            Not Active
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="map2"></div>
+        </div>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus tortor, euismod tristique dignissim ac,
             varius eu purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
@@ -626,7 +844,7 @@
                 'type': 'line',
                 'source': 'ny-pipelines',
                 'paint': {
-                    'line-color': 'green',
+                    'line-color': '#FF0000',
                     'line-width': 3,
                     'line-opacity': 0,
                 },
@@ -642,7 +860,7 @@
                 'type': 'line',
                 'source': 'ny-pipelines',
                 'paint': {
-                    'line-color': 'blue',
+                    'line-color': '#FF0000',
                     'line-width': 3,
                     'line-opacity': 0,
                 },
@@ -662,7 +880,7 @@
                 'type': 'line',
                 'source': 'ny-pipelines-new',
                 'paint': {
-                    'line-color': 'blue',
+                    'line-color': '#FF0000',
                     'line-width': 3,
                     'line-opacity': 0,
                 },
@@ -687,8 +905,8 @@
                 'paint': {
                     'circle-opacity': 0.6,
                     'circle-stroke-width': 1,
-                    'circle-stroke-color': 'blue',
-                    'circle-color': 'blue'
+                    'circle-stroke-color': '#FF0000',
+                    'circle-color': '#FF0000'
                 }
             })
             map.addLayer({
@@ -698,8 +916,8 @@
                 'paint': {
                     'circle-opacity': 0.6,
                     'circle-stroke-width': 1,
-                    'circle-stroke-color': 'green',
-                    'circle-color': 'green'
+                    'circle-stroke-color': '#FF0000',
+                    'circle-color': '#FF0000'
                 },
                 'filter': ['==', "Pipeline", "Iroquois Pipeline"]
             })
@@ -811,13 +1029,17 @@
                         'Not active', '#FF0000', // Red
                         '#000000' // Default color (black) for unexpected values
                     ],
-                    'line-width': 2 // Adjust line width if needed
+                    'line-width': 3 // Adjust line width if needed
                 }
             });
+            map2.addSource('interactive-points', {
+                type: 'geojson',
+                data: 'data/gas_infra_points.geojson'
+            })
             map2.addLayer({
                 'id': 'interactive-markers',
                 'type': 'circle',
-                'source': 'interactive-pipelines',
+                'source': 'interactive-points',
                 'filter': [
                     'all',
                     ['==', ['get', 'geo_type'], 'point'],  // Only "point" features
@@ -832,16 +1054,22 @@
                         'Not active', '#FF0000', // Red
                         '#000000' // Default color (black) for unexpected values
                     ],
-                    'circle-radius': 5, // Adjust line width if needed
+                    'circle-radius': 6, // Adjust line width if needed
                     'circle-stroke-width': 1,
-                    'circle-stroke-color': [
-                        'match',
-                        ['get', 'status'],
-                        'approved', '#00FF00', // Green
-                        'in progress', '#FFFF00', // Yellow
-                        'not active', '#FF0000', // Red
-                        '#000000' // Default color (black) for unexpected values
-                    ]
+                    'circle-stroke-color':
+                        [
+                            'case',
+                            ['boolean', ['feature-state', 'hover'], false],
+                            "white",
+                            [
+                                'match',
+                                ['get', 'status'],
+                                'Approved', '#00FF00', // Green
+                                'In Progress', '#FFFF00', // Yellow
+                                'Not active', '#FF0000', // Red
+                                '#000000' // Default color (black) for unexpected values
+                            ]
+                        ]
                 }
             });
 
@@ -916,22 +1144,159 @@
         }
         )
 
-        map.on('click', 'compressor-int', (e) => {
+        map2.on('click', 'interactive', (e) => {
+            const feature = e.features[0];
+            const properties = feature.properties;
 
-            // // conditional logic for sentence
-            // var singPlural = "people"
-            // var verb = "were"
-            // if (e.features[0].properties.number_of_persons_killed === '1') {
-            //     var singPlural = "person"
-            //     var verb = "was"
-            // }
+            // Extract properties, defaulting to 'N/A' if missing
+            const projectName = properties.project_name || 'Unknown';
+            const geoNote = properties.geo_note || '';
+            const location = properties.location || '';
+            const pipeline = properties.pipeline || '';
+            const operator = properties.operator || '';
+            const status = properties.status || '';
+            const whatsThePlan = properties.whats_the_plan || '';
+            const whatNow = properties.what_now || '';
 
+            // Define status color dynamically
+            let statusColor = "#fafafa"; // Default (white)
+            if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+            else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+            else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
 
-            //popups
-            const popup = new mapboxgl.Popup()
+            // Create popup content with table and collapsible sections
+            let popupContent = ``;
+            if (properties.proposed === "Yes") popupContent = `
+                <div class="popup-container">
+                    <table class="popup-table">
+                        <tr>
+                            <td class = "popup-title"><strong>${projectName}</strong></td>
+                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                        </tr>
+                        <tr>
+                            <td> <span>${geoNote}</span></td>
+                            <td class = 'faint'> ${location}</td>
+                        </tr>
+                        <tr>
+                            <td> ${pipeline}</td>
+                            <td class = 'faint'> ${operator}</td>
+                        </tr>
+                    </table>
+
+                    <h4 class="popup-header" onclick="togglePopupSection(this)">
+                        <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+                    </h4>
+                    <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+
+                    <h4 class="popup-header" onclick="togglePopupSection(this)">
+                        <span class="popup-arrow">▶</span> WHAT NOW
+                    </h4>
+                    <div class="popup-section" style="display: none;">${whatNow}</div>
+                </div>
+            `;
+            else if (properties.propsed !== "Yes") popupContent = `                
+            <div class="popup-container">
+                    <table class="popup-table">
+                        <tr>
+                            <td class = "popup-title"><strong>${operator}</strong></td>
+                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                        </tr>
+                    </table>
+                </div>`;
+
+            // Create and show the popup
+            new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML(`${e.features[0].properties.Proposed} killed by a ${e.features[0].properties.Operator} due to `)
-                .addTo(map)
+                .setHTML(popupContent)
+                .addTo(map2);
+        });
+
+
+        // Change cursor when hovering over the layer
+        map2.on('mouseenter', 'interactive', () => {
+            map2.getCanvas().style.cursor = 'pointer';
+        });
+        map2.on('mouseleave', 'interactive', () => {
+            map2.getCanvas().style.cursor = '';
+        });
+
+        // Function to toggle collapsible sections with animated arrow
+        function togglePopupSection(header) {
+            const section = header.nextElementSibling;
+            const arrow = header.querySelector('.popup-arrow');
+
+            if (section.style.display === 'none') {
+                section.style.display = 'block';
+                arrow.innerHTML = '▼'; // Change to down arrow when expanded
+            } else {
+                section.style.display = 'none';
+                arrow.innerHTML = '▶'; // Change back to sideways arrow when collapsed
+            }
+        }
+
+        map2.on('click', 'interactive-markers', (e) => {
+            const feature = e.features[0];
+            const properties = feature.properties;
+
+            // Extract properties, defaulting to 'N/A' if missing
+            const projectName = properties.project_name || 'Unknown';
+            const geoNote = properties.geo_note || '';
+            const location = properties.location || '';
+            const pipeline = properties.pipeline || '';
+            const operator = properties.operator || '';
+            const status = properties.status || '';
+            const whatsThePlan = properties.whats_the_plan || '';
+            const whatNow = properties.what_now || '';
+
+            // Define status color dynamically
+            let statusColor = "#fafafa"; // Default (white)
+            if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+            else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+            else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
+
+            // Create popup content with table and collapsible sections
+            const popupContent = `
+        <div class="popup-container">
+            <table class="popup-table">
+                <tr>
+                    <td class = "popup-title"><strong>${projectName}</strong></td>
+                    <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                </tr>
+                <tr>
+                    <td> <span>${geoNote}</span></td>
+                    <td class = 'faint'> ${location}</td>
+                </tr>
+                <tr>
+                    <td> ${pipeline}</td>
+                    <td class = 'faint'> ${operator}</td>
+                </tr>
+            </table>
+
+            <h4 class="popup-header" onclick="togglePopupSection(this)">
+                <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+            </h4>
+            <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+
+            <h4 class="popup-header" onclick="togglePopupSection(this)">
+                <span class="popup-arrow">▶</span> WHAT NOW
+            </h4>
+            <div class="popup-section" style="display: none;">${whatNow}</div>
+        </div>
+    `;
+
+            // Create and show the popup
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(popupContent)
+                .addTo(map2);
+        });
+
+        // Change cursor when hovering over the layer
+        map2.on('mouseenter', 'interactive-markers', () => {
+            map2.getCanvas().style.cursor = 'pointer';
+        });
+        map2.on('mouseleave', 'interactive-markers', () => {
+            map2.getCanvas().style.cursor = '';
         });
 
 

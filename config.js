@@ -18,7 +18,7 @@ var config = {
     //title: 'HEADLINE GOES HERE',
     //subtitle: 'Subtitle is a little more verbose than the headline.',
     //byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
-    footer: 'Developed by Patrick Spauster <br> Source: source citations, etc.  Adapted from <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+    footer: "Developed by Patrick Spauster for City Limits <br> Source: Pipeline data from <a href='https://atlas.eia.gov/datasets/4a158d2113f145039f71b80d07e2c19c_0/explore?location=41.676333%2C-72.866541%2C7.00'>US Energy Information Administration</a> and author's analysis. Adapted from <a href='https://github.com/mapbox/storytelling' target='_blank'>Mapbox Storytelling</a> template.",
     chapters: [
         {
             id: 'photo-title',
