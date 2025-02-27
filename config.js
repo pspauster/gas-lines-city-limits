@@ -27,7 +27,7 @@ var config = {
             title: 'New York Approved a Major Gas Pipeline Expansion. What Does it Mean for its Climate Commitments?',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
-            description: 'The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> By Mariana Simões',
+            description: "The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers' homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> By Mariana Simões",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -260,47 +260,6 @@ var config = {
             ]
         },
         {
-            id: 'ny-iroquois',
-            alignment: 'left',
-            hidden: false,
-            //title: 'New York States',
-            //image: './assets/san-fran.jpeg',
-            description: "And more gas is about to make its way to New York City. On Feb. 7, the state greenlit an enhancement project by gas supplier Iroquois Pipeline Company, which will boost the capacity of four facilities that compress gas to push more of it into the city.",
-            location: {
-                center: [-74.0179, 41.7994],
-                zoom: 7.25,
-                pitch: 60,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [
-                {
-                    layer: 'state',
-                    opacity: 0.25
-                },
-                {
-                    layer: 'ny-pipelines-iroquois',
-                    opacity: 1,
-                },
-                {
-                    layer: 'ny-points-iroquois',
-                    opacity: 1,
-                },
-            ],
-            onChapterExit: [
-                {
-                    layer: 'ny-pipelines-iroquois',
-                    opacity: 0,
-                },
-                {
-                    layer: 'ny-points-iroquois',
-                    opacity: 0,
-                },
-            ]
-        },
-        {
             id: 'ny-proposed',
             alignment: 'left',
             hidden: false,
@@ -354,12 +313,94 @@ var config = {
             ]
         },
         {
+            id: 'ny-iroquois',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: "On Feb. 7, the state greenlit an enhancement project by gas supplier Iroquois Pipeline Company, which will boost the capacity of four facilities that compress gas to push more of it into the city.",
+            location: {
+                center: [-74.0179, 41.7994],
+                zoom: 7.25,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'state',
+                    opacity: 0.25
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 1,
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 0,
+                },
+            ]
+        },
+        {
+            id: 'ny-iroquois2',
+            alignment: 'left',
+            hidden: false,
+            //title: 'New York States',
+            //image: './assets/san-fran.jpeg',
+            description: "The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers’ homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say.",
+            location: {
+                center: [-74.0179, 41.7994],
+                zoom: 7.25,
+                pitch: 60,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                    layer: 'state',
+                    opacity: 0.25
+                },
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 1,
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 1,
+                },
+                {
+                    layer: 'ny-points-iroquois',
+                    opacity: 1,
+                },
+            ]
+        },
+        {
             id: 'ny-athens',
             alignment: 'left',
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. The Iroquois project alone could generate $3.78 billion in climate damages and add the equivalent of 186,000 passenger cars to the road in planet-warming gasses. It will also spew pollution directly into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.',
+            description: 'The Iroquois project alone could generate $3.78 billion in climate damages and add the equivalent of 186,000 passenger cars to the road in planet-warming gasses. It will also spew pollution directly into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.',
             location: {
                 center: [-73.82212, 42.26607],
                 zoom: 14.39,
@@ -375,22 +416,22 @@ var config = {
                     opacity: 0,
                 },
                 {
-                    layer: 'ny-pipelines-proposed',
+                    layer: 'ny-pipelines-iroquois',
                     opacity: 1,
                 },
                 {
-                    layer: 'ny-proposed-points',
+                    layer: 'ny-points-iroquois',
                     opacity: 1,
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'ny-pipelines-proposed',
-                    opacity: 0,
+                    layer: 'ny-pipelines-iroquois',
+                    opacity: 1,
                 },
                 {
-                    layer: 'ny-proposed-points',
-                    opacity: 0,
+                    layer: 'ny-points-iroquois',
+                    opacity: 1,
                 }
             ]
         },

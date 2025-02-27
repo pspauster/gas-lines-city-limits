@@ -64,6 +64,17 @@
 
         }
 
+        .copy p a {
+            color: #FF0000
+        }
+
+        p.section-header {
+            font-size: 30px;
+            font-weight: 900;
+            margin-top: 15px;
+            font-family: "Opinion Pro Bold";
+        }
+
         .container-interactive {
             position: relative;
             height: 80vh;
@@ -130,13 +141,13 @@
         }
 
         p {
-            padding: 16px;
             margin: auto;
             max-width: 1000px;
             justify-content: center;
             font-size: 18px;
             line-height: 32px;
             font-weight: 400;
+            padding: 10px 0 10px 0 
         }
 
         img {
@@ -144,6 +155,7 @@
             max-width: 100%;
             display: block;
             padding: 10px;
+            box-sizing: border-box;
         }
 
         #image {
@@ -183,6 +195,10 @@
         #footer p {
             line-height: 15px;
             font-size: 10px;
+        }
+
+        #footer p a {
+            color: #d2d2d2
         }
 
         #features {
@@ -237,6 +253,10 @@
         .step p {
             font-size: 20px;
             line-height: 30px;
+        }
+
+        .step p a {
+            color: #d2d2d2;
         }
 
         .step.active {
@@ -355,6 +375,16 @@
             margin-right: 5px;
         }
 
+        /* //add css class for animation 1 when it doesn't have class 0 when it does */
+        #image:not(.fade) {
+            opacity: 1
+        }
+
+        .fade {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
         @media (max-width: 750px) {
 
             .centered,
@@ -397,6 +427,7 @@
                 font-size: 12px;
             }
 
+
         }
 
         /* Fix issue on mobile browser where scroll breaks  */
@@ -414,8 +445,11 @@
     <div id="story"></div>
 
     <div class="copy">
+        <p class = "section-header">
+            Sample Section Header
+        </p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus tortor, euismod tristique dignissim ac,
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href = "citylimits.org"> Sample link </a>Morbi metus tortor, euismod tristique dignissim ac,
             varius eu purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
             egestas. Sed in ex velit. Morbi nisi turpis, eleifend a neque eu, placerat tempus eros. Nam elementum velit
             quis faucibus scelerisque. Aenean pulvinar metus vitae tincidunt imperdiet. In pellentesque sapien sed urna
@@ -459,7 +493,9 @@
                     Gas Projects in New York State
                 </div>
                 <div class="description-interactive">
-                    <p>Proposed projects to bring more gas into New York State since 2019. Some are located in neighboring states and were approved in those jurisdictions. The circles represent compressor stations, while lines reflect pipeline proposals. Select a project to learn more.</p>
+                    <p>Proposed projects to bring more gas into New York State since 2019. Some are located in
+                        neighboring states and were approved in those jurisdictions. The circles represent compressor
+                        stations, while lines reflect pipeline proposals. Select a project to learn more.</p>
                 </div>
                 <div class="legend-box">
                     <div id="legend">
@@ -773,6 +809,7 @@
 
 
         map.on("load", function () {
+            map.resize();
             if (config.use3dTerrain) {
                 map.addSource('mapbox-dem', {
                     'type': 'raster-dem',
@@ -796,6 +833,8 @@
                 });
 
             };
+
+            //lazy option is trigger window resize event window.resize event.
 
             map.addSource('ny-state', {
                 type: 'geojson',
@@ -934,7 +973,7 @@
                 .onStepEnter(async response => {
                     var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
                     if (current_chapter === -1) {
-                        current_chapter = 7;
+                        current_chapter = 8;
                     }
                     var chapter = config.chapters[current_chapter];
                     var mapcanvas = document.getElementById('map')
@@ -965,12 +1004,12 @@
                         });
                     }
                     if (chapter.type === 'image') {
-                        mapcanvas.hidden = true;
-                        background.hidden = false;
+                        mapcanvas.hidden = true;//leave this
+                        background.classList.remove('fade'); //remove the class called fade
                         background.style.backgroundImage = `url('${chapter.imagebackground}')`
                     } else {
-                        mapcanvas.hidden = false;
-                        background.hidden = true
+                        mapcanvas.hidden = false;//leave this
+                        background.classList.add('fade') //add class called fade
                     };
                     // if (repriseActive()) {
                     //     console.log("reprise is active")
