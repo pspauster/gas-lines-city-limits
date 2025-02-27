@@ -24,7 +24,7 @@ var config = {
             id: 'photo-title',
             alignment: 'center',
             hidden: false,
-            title: 'New York Approved a Major Gas Pipeline Expansion. What Does it Mean for its Climate Commitments?',
+            title: 'New York Approved a Major Gas Pipeline Expansion. What Does it Mean for its Climate Goals?',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
             description: "The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers' homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> By Mariana Simões",
