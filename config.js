@@ -184,7 +184,8 @@ var config = {
                 },
                 {
                     layer:'state',
-                    opacity: .25
+                    opacity: .25,
+                    duration: 1000
                 },
                 {
                     layer: 'ny-pipelines-proposed-new',
@@ -218,14 +219,11 @@ var config = {
                 {
                     layer: 'ny-pipelines-all',
                     opacity: 1,
+                    duration: 1000
                 },
                 {
                     layer:'state',
                     opacity: .25
-                },
-                {
-                    layer: 'state',
-                    opacity: 0.25
                 },
                 {
                     layer: 'ny-pipelines-proposed',
