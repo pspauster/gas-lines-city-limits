@@ -386,11 +386,11 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'ny-pipelines-proposed',
-                    opacity: 1,
+                    opacity: 0,
                 },
                 {
                     layer: 'ny-proposed-points',
-                    opacity: 1,
+                    opacity: 0,
                 }
             ]
         },
