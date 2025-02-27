@@ -147,7 +147,7 @@
             font-size: 18px;
             line-height: 32px;
             font-weight: 400;
-            padding: 10px 0 10px 0 
+            padding: 10px 0 10px 0
         }
 
         img {
@@ -277,7 +277,7 @@
             font-family: 'Opinion Pro Bold';
             font-size: 40px;
             line-height: 47px;
-            padding: 16px 0px 16px 0px; 
+            padding: 16px 0px 16px 0px;
             margin: 0;
             /*  */
         }
@@ -386,6 +386,14 @@
             transition: opacity 1s;
         }
 
+        .col2 {
+            padding-left: 10px;
+        }
+
+        .description-interactive p{
+            margin-bottom: 0px;
+        }
+
         @media (max-width: 750px) {
 
             .centered,
@@ -446,11 +454,12 @@
     <div id="story"></div>
 
     <div class="copy">
-        <p class = "section-header">
+        <p class="section-header">
             Sample Section Header
         </p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href = "citylimits.org"> Sample link </a>Morbi metus tortor, euismod tristique dignissim ac,
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="citylimits.org"> Sample link </a>Morbi
+            metus tortor, euismod tristique dignissim ac,
             varius eu purus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
             egestas. Sed in ex velit. Morbi nisi turpis, eleifend a neque eu, placerat tempus eros. Nam elementum velit
             quis faucibus scelerisque. Aenean pulvinar metus vitae tincidunt imperdiet. In pellentesque sapien sed urna
@@ -494,26 +503,43 @@
                     Gas Projects in New York State
                 </div>
                 <div class="description-interactive">
-                    <p>Proposed projects to bring more gas into New York State since 2019. Some are located in
-                        neighboring states and were approved in those jurisdictions. The circles represent infrastructure buildouts, while lines reflect pipeline proposals. Select a project to learn more.</p>
+                    <p>Proposed infrastructure and pipeline projects to bring more gas into New York State since 2019.
+                    </p>
                 </div>
                 <div class="legend-box">
                     <div id="legend">
-                        <div class="legend-item">
-                            <span class="legend-circle" style="background-color: #00FF00;"></span>
-                            <span class="legend-line" style="background-color: #00FF00;"></span>
-                            Approved
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-circle" style="background-color: #FFFF00;"></span>
-                            <span class="legend-line" style="background-color: #FFFF00;"></span>
-                            In Progress
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-circle" style="background-color: #FF0000;"></span>
-                            <span class="legend-line" style="background-color: #FF0000;"></span>
-                            Not Active
-                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="legend-item">
+                                        <span class="legend-circle" style="background-color: #00FF00;"></span>
+                                        <span class="legend-line" style="background-color: #00FF00;"></span>
+                                        Approved
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-circle" style="background-color: #FFFF00;"></span>
+                                        <span class="legend-line" style="background-color: #FFFF00;"></span>
+                                        In Progress
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-circle" style="background-color: #FF0000;"></span>
+                                        <span class="legend-line" style="background-color: #FF0000;"></span>
+                                        Not Active
+                                    </div>
+                                </td>
+                                <td class="col2">
+                                    <div class="legend-item">
+                                        <span class="legend-circle" style="background-color: #d2d2d2;"></span>
+                                        Infrastructure
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-line" style="background-color: #d2d2d2; margin-left: 4px; margin-right: 9px;"></span>
+                                        Pipeline
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
                     </div>
                 </div>
             </div>
