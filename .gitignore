@@ -64,3 +64,4 @@ typings/
 # development config.js files
 /src/config.js
 .Rproj.user
+.Rhistory
