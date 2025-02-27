@@ -24,10 +24,10 @@ var config = {
             id: 'photo-title',
             alignment: 'center',
             hidden: false,
-            title: 'Is New York Still Leading the Charge in the Nation’s Fight Against Climate Change?',
+            title: 'New York Approved a Major Gas Pipeline Expansion. What Does it Mean for its Climate Commitments?',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
-            description: 'As New York begins to backtrack on commitments to mostly phase out the use of planet-warming fossil fuels like gas, the state approves a new project to funnel more gas into the Big Apple. <br><br> By Mariana Simões',
+            description: 'The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> By Mariana Simões',
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -89,7 +89,7 @@ var config = {
             //title: 'New York States',
             type: 'image',
             imagebackground: './assets/buildings_smoke.gif',
-            description: 'The United States is facing a pivotal moment in its fight against climate change as Donald Trump carries out plans to roll back those efforts.',
+            description: 'The United States is facing a pivotal moment in its fight against climate change as President Donald Trump carries out plans to roll back those efforts.',
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -151,7 +151,7 @@ var config = {
             //title: 'New York States',
             //type: 'image',
             //imagebackground: 'assets/clcpa_bill_signing_sjm_in_nyc_copy.jpeg',
-            description: 'Back in 2019, when New York passed its landmark climate law, the CLCPA, it became a shining example of national climate action. The law established a roadmap for the State to mostly phase out planet-warming fossil fuels like gas by 2050 and transition to clean energy instead.',
+            description: 'In 2019, when New York passed its landmark Climate Leadership and Community Protection Act, or CLCPA, it became a shining example of national climate action. The law established a roadmap for the state to mostly phase out planet-warming fossil fuels like gas by 2050, and transition to clean energy instead.',
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -204,7 +204,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'But 96 percent of the downstate region, where the Big Apple is located, is still powered by fossil fuels, through pipelines like these for natural gas. In total, only about 29 percent of the entire Empire State’s electricity comes from clean renewable sources.',
+            description: "But <a href = 'https://www.nyiso.com/documents/20142/2223020/2024-Power-Trends.pdf'>96 percent</a> of the downstate region is still powered by fossil fuels, through pipelines like these for natural gas. In total, only about <a href = 'https://www.nyiso.com/documents/20142/2226333/2024-Gold-Book-Public.pdf'>29 percent</a> of the entire Empire State’s electricity comes from renewable sources.",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -265,7 +265,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: "And more gas is about to make its way to New York City, putting into question the state's ability to meet its climate goals. On February 7th, the State greenlit an enhancement project by gas supplier, Iroquois Pipeline Company, to boost the capacity of four facilities that compress gas to push more of it into the City.",
+            description: "And more gas is about to make its way to New York City. On Feb. 7, the state greenlit an enhancement project by gas supplier Iroquois Pipeline Company, which will boost the capacity of four facilities that compress gas to push more of it into the city.",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -306,7 +306,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'City Limits found 10 proposals for gas expansion over the last five years and mapped out continued bids to keep gas flowing in the Empire State.',
+            description: 'Since the CLCPA was passed, companies like Iroquois have made 10 attempts to increase the flow of gas across the state. But none secured New York permits to move forward, until now.',
             location: {
                 center: [-74.2179, 41.1994],
                 zoom: 8,
@@ -359,7 +359,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: 'The Iroquois project could generate $3.78 billion in climate damages and add the equivalent of 186,000 passenger cars to the road in planet-warming gasses. It will also spew pollution directly into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.',
+            description: 'The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. The Iroquois project alone could generate $3.78 billion in climate damages and add the equivalent of 186,000 passenger cars to the road in planet-warming gasses. It will also spew pollution directly into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.',
             location: {
                 center: [-73.82212, 42.26607],
                 zoom: 14.39,
