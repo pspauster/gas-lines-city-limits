@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 
 <head>
@@ -22,6 +22,11 @@
             font-family: "Neue Haas Grotesk Text Pro";
             src: url("fonts/38184073029.ttf");
             src: url("fonts/31862445252.ttf");
+        }
+
+        html::-webkit-scrollbar {
+            width: 0;
+            background-color: transparent;
         }
 
         body {
@@ -182,6 +187,24 @@
             text-align: center;
         }
 
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000; /* Ensures it's above other content */
+            max-height: 80px;
+        }
+
+        .banner img {
+            max-height: 80px;
+            width: auto;
+            padding: 0px
+        }
+
         #footer {
             width: 100%;
             min-height: 2vh;
@@ -259,6 +282,7 @@
             color:#444;
             padding: 2px 0px 15px 0px;
             font-style: italic;
+            font-size: 14px;
         }
 
         .step p a {
@@ -365,6 +389,7 @@
 
         .legend-item {
             font-size: 12px;
+            color: white
         }
 
         .legend-circle {
@@ -455,6 +480,11 @@
 
 <body>
 
+    <div class="banner">
+        <a href = "https://citylimits.org/">
+            <img src="https://optimized.citylimits.org/wp-content/uploads/2025/03/logo-white.svg"></img>
+        </a>
+    </div>
     <div id="map"></div>
     <div id="image"></div>
     <div id="story"></div>
@@ -934,6 +964,7 @@
         <p>“State governments need to be as bold as they can at this moment,” he added. “And so I would hope that New
             York would be at the leading edge on that. But there's a lot of pressure pushing the other way right now.”
         </p>
+        <p></p>
         <p class = "photo-caption">To reach the reporter behind this story, contact Mariana@citylimits.org. To reach the editor, contact Jeanmarie@citylimits.org</p>
 
     </div>
