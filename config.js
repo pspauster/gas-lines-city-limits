@@ -341,14 +341,14 @@ var config = {
                 },
             ],
             onChapterExit: [
-                {
-                    layer: 'ny-pipelines-iroquois',
-                    opacity: 0,
-                },
-                {
-                    layer: 'ny-points-iroquois',
-                    opacity: 0,
-                },
+                // {
+                //     layer: 'ny-pipelines-iroquois',
+                //     opacity: 0,
+                // },
+                // {
+                //     layer: 'ny-points-iroquois',
+                //     opacity: 0,
+                // },
             ]
         },
         {
