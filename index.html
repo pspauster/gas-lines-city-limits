@@ -200,7 +200,7 @@
         }
 
         .banner img {
-            max-height: 6vh; 
+            max-height: 8vh; 
             width: auto;
             padding: 0px;
             object-fit: contain;
@@ -286,6 +286,7 @@
             padding: 2px 0px 15px 0px;
             font-style: italic;
             font-size: 14px;
+            line-height: 16px;
         }
 
         .step p a {
@@ -334,6 +335,8 @@
             width: 100%;
             /* Adjust width as needed */
             table-layout: fixed;
+            color: white;
+            font-size: 12px;
             /* Ensures the set column widths take effect */
         }
 
@@ -349,7 +352,7 @@
 
         .popup-title {
             font-family: "Opinion Pro Bold";
-            font-size: 18px
+            font-size: 20px
         }
 
         .faint {
@@ -372,8 +375,9 @@
         }
 
         .popup-section {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 300;
+            line-height: 14px
 
         }
 
@@ -969,7 +973,9 @@
         </p>
         <p></p>
         <p class = "photo-caption">To reach the reporter behind this story, contact Mariana@citylimits.org. To reach the editor, contact Jeanmarie@citylimits.org</p>
-
+    </div>
+    <div class = "banner-bottom">
+        <div class="photo-caption">© 2025 City Limits</div>
     </div>
 
     <script src="./config.js"></script>
@@ -1659,8 +1665,6 @@
         map2.on('mouseleave', 'interactive-markers', () => {
             map2.getCanvas().style.cursor = '';
         });
-
-
 
     </script>
 
