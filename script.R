@@ -32,10 +32,38 @@ lines <- read_sf("data/ny-pipelines.geojson") %>%
   select(-status) %>% 
   left_join(lines_info, by = "operator") %>% 
   st_intersection(nyc_buffer) %>% 
-  st_set_crs(st_crs(points_sf))
+  st_set_crs(st_crs(points_sf)) %>% 
+  mutate(proposed = if_else(operator == "Tennessee Gas Pipeline" & !fid %in%
+                   c(
+                     24080:24081,
+                     24191:24193,
+                     24079:24076,
+                     24218,
+                     24075,
+                     240913,
+                     240159,
+                     240193,
+                     24912:24917,
+                     24187,
+                     24159
+                   ), NA,  proposed),
+         status = if_else(operator == "Tennessee Gas Pipeline" & !fid %in%
+                              c(
+                                24080:24081,
+                                24191:24193,
+                                24079:24076,
+                                24218,
+                                24075,
+                                240913,
+                                240159,
+                                240193,
+                                24912:24917,
+                                24187,
+                                24159
+                              ), NA,  status))
 
 st_crs(lines)
-mapview(lines)
+mapview(lines %>% filter(operator == "Tennessee Gas Pipeline", is.na(status)), zcol = "status")
 
 new_lines <- read_sf("data/pipes_new_only.geojson") %>% 
   clean_names() %>% 
@@ -54,11 +82,16 @@ m2 <- leafem::addFeatures(m, points_sf)
 leafem::addFeatures(m2, new_lines)
 
 all_together <- bind_rows(lines, points_sf, new_lines)
+  
 
 st_write(all_together, "data/gas_infra.geojson", append = F)
 
-all_together %>% filter(Proposed == "Yes", geo_type == "line") %>% 
-  st_write("data/test.geojson")
+
+
+
+# 
+# all_together %>% filter(Proposed == "Yes", geo_type == "line") %>% 
+#   st_write("data/test.geojson")
 
 library(tigris)
 

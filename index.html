@@ -457,6 +457,11 @@
                 margin: 0 auto;
             }
 
+            h3 {
+                font-size: 30px;
+                line-height: 33px;
+            }
+
             .mapboxgl-popup-content {
                 background-color: #444;
                 width: 200px
@@ -1393,7 +1398,7 @@
         });
 
 
-        map.on("load", function () {
+        map2.on("load", function () {
             map2.addSource('interactive-pipelines', {
                 type: 'geojson',
                 data: 'data/gas_infra.geojson',

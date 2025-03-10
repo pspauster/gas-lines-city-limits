@@ -27,7 +27,7 @@ var config = {
             title: 'New York Approved a Major Gas Pipeline Expansion. What Does it Mean for its Climate Goals?',
             type: 'image',
             imagebackground: 'https://citylimits.org/wp-content/uploads/2020/12/20201217SnowStorm16X9v3.gif',
-            description: "The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers’ homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> Reporting by Mariana Simões, interactive and graphics by Patrick Spauster",
+            description: "The approval of Iroquois’ enhancement project, which utility companies argue is needed to heat New Yorkers’ homes in the coldest months, amps up planet-warming pollution—and signals that the state’s commitment to reaching its climate goals is faltering, critics say. <br><br> Reporting by Mariana Simões with graphics by Patrick Spauster",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
