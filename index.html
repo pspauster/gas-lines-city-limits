@@ -597,7 +597,8 @@
             organizer at Food & Water Watch.
         </p>
         <div class="container-interactive">
-            <div class="sidebar">
+            <iframe src="interactive-map.html" width = 100% height = 100%></iframe>
+            <!-- <div class="sidebar">
                 <div class="title-interactive">
                     Gas Projects in New York State
                 </div>
@@ -643,7 +644,7 @@
                     </div>
                 </div>
             </div>
-            <div id="map2"></div>
+            <div id="map2"></div> -->
         </div>
         <p class="section-header">
             'A political problem'
@@ -1417,8 +1418,12 @@
                         'Not active', '#FF0000', // Red
                         '#000000' // Default color (black) for unexpected values
                     ],
-                    'line-width': 3 // Adjust line width if needed
-                }
+                    'line-width': 4, // Adjust line width if needed
+                },
+                'layout': {
+                    'line-join': "miter",
+                    'line-cap': "round"
+                } 
             });
             map2.addSource('interactive-points', {
                 type: 'geojson',
@@ -1461,74 +1466,6 @@
                 }
             });
 
-
-            // map2.addSource('ny-pipelines-new', {
-            //     type: "geojson",
-            //     data: 'data/pipes_new_only.geojson'
-            // })
-            // add pipelines
-            // map2.addLayer({
-            //     'id': 'ny-new-int',
-            //     'type': 'line',
-            //     'source': 'ny-pipelines-new',
-            //     'paint': {
-            //         'line-color': 'pink',
-            //         'line-width': 3,
-            //         'line-opacity': 0,
-            //     },
-            //     'layout': {
-            //         visibility: 'visible'
-            //     },
-            //     // filter: [
-            //     //     '==', 'Proposed', "Yes"
-            //     // ]
-            // })
-            // map2.addLayer({
-            //     'id': 'pipelines-int',
-            //     'type': 'line',
-            //     'source': 'interactive-pipelines',
-            //     'paint': {
-            //         'line-width': 3,
-            //         'line-opacity': 1,
-            //         'line-color':
-            //             ['match', ['get', 'Proposed'],
-            //                 'Yes', '#FF0000',
-            //             /*other*/ '#000000']
-            //     },
-            //     layout: {
-            //         visibility: 'visible'
-            //     }
-            // })
-            // // add pipelines
-            // map2.addLayer({
-            //     'id': 'compressor-int',
-            //     'type': 'circle',
-            //     'source': 'interactive-pipelines',
-            //     'filter': ['==', "geo_type", "point"],
-            //     'paint': {
-            //         'circle-stroke-width': 3,
-            //         'circle-opacity': 1,
-            //         'circle-stroke-color': [
-            //             'case',
-            //             ['boolean', ['feature-state', 'hover'], false],
-            //             "white", //add white outline on hover
-            //             ['match', //otherwise outline is the same as circle color
-            //                 ['get', 'Proposed'],
-            //                 'Yes',
-            //                 'red',
-            //         /*other*/ '#000000']
-            //         ],
-            //         'circle-color': ['match', //otherwise outline is the same as circle color
-            //             ['get', 'Proposed'],
-            //             'Yes',
-            //             'red',
-            //         /*other*/ '#000000']
-            //     },
-
-            //     'layout': {
-            //         visibility: 'visible'
-            //     }
-            // })
         }
         )
 

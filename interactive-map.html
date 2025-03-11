@@ -1,0 +1,516 @@
+<html>
+
+<head>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://cdn.jsdelivr.net/npm/mapbox-gl-globe-minimap@1.2.0/dist/bundle.js"></script>
+    <style>
+        @font-face {
+            font-family: "Opinion Pro Bold";
+            src: url("fonts/Opinion Pro Bold.ttf");
+        }
+
+        @font-face {
+            font-family: "Neue Haas Grotesk Text Pro";
+            src: url("fonts/38184073029.ttf");
+            src: url("fonts/31862445252.ttf");
+        }
+
+        html::-webkit-scrollbar {
+            width: 0;
+            background-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Neue Haas Grotesk Text Pro";
+        }
+
+        .container-map {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            background-color: white;
+        }
+
+        .sidebar {
+            position: absolute;
+            width: 250px;
+            z-index: 10;
+            background: #444;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-left: 15px;
+            font-family: "Neue Haas Grotesk Text Pro";
+            color: white
+        }
+
+        .title-interactive {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-family: "Opinion Pro Bold";
+        }
+
+        .description-interactive p {
+            font-size: 10px;
+            margin-bottom: 10px;
+            line-height: normal;
+            padding: 5px;
+        }
+
+        #legend {
+            padding: 5px;
+            /* line-height: 14px; */
+            font-size: 14px;
+        }
+
+        #map2 {
+            /* height: 80vh; */
+            /* width: 80vw; */
+            height: 100%;
+            width: 100%;
+            position: absolute
+                /* position: relative; */
+                /* margin: auto; */
+                /* background-color: white; */
+                /*padding-left: 10vw;
+            padding-right: 10vw;*/
+        }
+
+        .legend-box {
+            border: none;
+            border-radius: 5px;
+        }
+
+        .mapboxgl-popup-content {
+            background-color: #444;
+            width: 300px
+        }
+
+        .mapboxgl-popup-close-button {
+            color: #fafafa
+        }
+
+        .popup-container {
+            font-family: "Neue Haas Grotesk Text Pro";
+            background-color: #444;
+            color: #fafafa
+        }
+
+        .popup-table {
+            width: 100%;
+            /* Adjust width as needed */
+            table-layout: fixed;
+            color: white;
+            font-size: 12px;
+            /* Ensures the set column widths take effect */
+        }
+
+        .popup-table td:first-child {
+            width: 67%;
+            /* Column 1 (1/3 of the table width) */
+        }
+
+        .popup-table td:last-child {
+            width: 33%;
+            /* Column 2 (2/3 of the table width) */
+        }
+
+        .popup-title {
+            font-family: "Opinion Pro Bold";
+            font-size: 20px
+        }
+
+        .faint {
+            font-size: 8px;
+            font-style: italic;
+            text-align: right;
+        }
+
+        .popup-header {
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .popup-arrow {
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .popup-section {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 14px
+        }
+
+        .popup-status {
+            text-align: right;
+        }
+
+        .popup-container td .popup-status {
+            color: #0071bc
+        }
+
+        tr span {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .legend-item {
+            font-size: 12px;
+            color: white
+        }
+
+        .legend-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .legend-line {
+            width: 2px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .col2 {
+            padding-left: 10px;
+        }
+
+        .description-interactive p {
+            margin-bottom: 0px;
+        }
+
+        @media (max-width: 750px) {
+
+            .mapboxgl-popup-content {
+                background-color: #444;
+                width: 200px
+            }
+
+            .container-map {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .sidebar {
+                position: relative;
+                height: 32%;
+                width: 100%;
+                margin: 0;
+                overflow-y: scroll;
+                flex-grow: 0;
+                box-sizing: border-box;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-map">
+        <div class="sidebar">
+            <div class="title-interactive">
+                Gas Projects in New York State
+            </div>
+            <div class="description-interactive">
+                <p>Proposed infrastructure and pipeline projects since 2019. Some are located in neighboring states and
+                    were
+                    approved in those jurisdictions. Select a project to learn more.
+                </p>
+            </div>
+            <div class="legend-box">
+                <div id="legend">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="legend-item">
+                                    <span class="legend-circle" style="background-color: #00FF00;"></span>
+                                    <span class="legend-line" style="background-color: #00FF00;"></span>
+                                    Approved
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-circle" style="background-color: #FFFF00;"></span>
+                                    <span class="legend-line" style="background-color: #FFFF00;"></span>
+                                    In Progress
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-circle" style="background-color: #FF0000;"></span>
+                                    <span class="legend-line" style="background-color: #FF0000;"></span>
+                                    Not Active
+                                </div>
+                            </td>
+                            <td class="col2">
+                                <div class="legend-item">
+                                    <span class="legend-circle" style="background-color: #d2d2d2;"></span>
+                                    Infrastructure
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-line"
+                                        style="background-color: #d2d2d2; margin-left: 4px; margin-right: 9px;"></span>
+                                    Pipeline
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div id="map2"></div>
+    </div>
+</body>
+
+<script>
+    mapboxgl.accessToken = "pk.eyJ1IjoicHNwYXVzdGVyIiwiYSI6ImNtNzEzNWVuMDA4bXoycnE3dTR5MjNncnMifQ.eaNWOML8R7HzgViimF03Qg";
+
+    var map2 = new mapboxgl.Map({
+        container: 'map2',
+        style: 'mapbox://styles/mapbox/dark-v11',
+        center: [-74.2179, 42.1994],
+        zoom: 6.75,
+        bearing: 0,
+        pitch: 30,
+        interactive: true,
+        projection: 'equirectangular'
+    });
+
+
+    map2.on("load", function () {
+        map2.addSource('interactive-pipelines', {
+            type: 'geojson',
+            data: 'data/gas_infra.geojson',
+            //generateID: true
+        })
+        map2.addLayer({
+            'id': 'interactive',
+            'type': 'line',
+            'source': 'interactive-pipelines',
+            'paint': {
+                'line-color': [
+                    'match',
+                    ['get', 'status'],
+                    'Approved', '#00FF00', // Green
+                    'In Progress', '#FFFF00', // Yellow
+                    'Not active', '#FF0000', // Red
+                    '#000000' // Default color (black) for unexpected values
+                ],
+                'line-width': 4, // Adjust line width if needed
+            },
+            'layout': {
+                'line-join': "miter",
+                'line-cap': "round"
+            }
+        });
+        map2.addSource('interactive-points', {
+            type: 'geojson',
+            data: 'data/gas_infra_points.geojson'
+        })
+        map2.addLayer({
+            'id': 'interactive-markers',
+            'type': 'circle',
+            'source': 'interactive-points',
+            'filter': [
+                'all',
+                ['==', ['get', 'geo_type'], 'point'],  // Only "point" features
+                ['!=', ['get', 'geo_type'], null]       // Exclude null values
+            ], // Filter to only include points
+            'paint': {
+                'circle-color': [
+                    'match',
+                    ['get', 'status'],
+                    'Approved', '#00FF00', // Green
+                    'In Progress', '#FFFF00', // Yellow
+                    'Not active', '#FF0000', // Red
+                    '#000000' // Default color (black) for unexpected values
+                ],
+                'circle-radius': 6, // Adjust line width if needed
+                'circle-stroke-width': 1,
+                'circle-stroke-color':
+                    [
+                        'case',
+                        ['boolean', ['feature-state', 'hover'], false],
+                        "white",
+                        [
+                            'match',
+                            ['get', 'status'],
+                            'Approved', '#00FF00', // Green
+                            'In Progress', '#FFFF00', // Yellow
+                            'Not active', '#FF0000', // Red
+                            '#000000' // Default color (black) for unexpected values
+                        ]
+                    ]
+            }
+        });
+
+    }
+    )
+
+    map2.on('click', 'interactive', (e) => {
+        const feature = e.features[0];
+        const properties = feature.properties;
+
+        // Extract properties, defaulting to 'N/A' if missing
+        const projectName = properties.project_name || 'Unknown';
+        const geoNote = properties.geo_note || '';
+        const location = properties.location || '';
+        const pipeline = properties.pipeline || '';
+        const operator = properties.operator || '';
+        const status = properties.status || '';
+        const whatsThePlan = properties.whats_the_plan || '';
+        const whatNow = properties.what_now || '';
+
+        // Define status color dynamically
+        let statusColor = "#fafafa"; // Default (white)
+        if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+        else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+        else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
+
+        // Create popup content with table and collapsible sections
+        let popupContent = ``;
+        if (properties.proposed === "Yes") popupContent = `
+                <div class="popup-container">
+                    <table class="popup-table">
+                        <tr>
+                            <td class = "popup-title"><strong>${projectName}</strong></td>
+                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                        </tr>
+                        <tr>
+                            <td> <span>${geoNote}</span></td>
+                            <td class = 'faint'> ${location}</td>
+                        </tr>
+                        <tr>
+                            <td> ${pipeline}</td>
+                            <td class = 'faint'> ${operator}</td>
+                        </tr>
+                    </table>
+
+                    <h4 class="popup-header" onclick="togglePopupSection(this)">
+                        <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+                    </h4>
+                    <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+
+                    <h4 class="popup-header" onclick="togglePopupSection(this)">
+                        <span class="popup-arrow">▶</span> WHAT NOW
+                    </h4>
+                    <div class="popup-section" style="display: none;">${whatNow}</div>
+                </div>
+            `;
+        else if (properties.propsed !== "Yes") popupContent = `                
+            <div class="popup-container">
+                    <table class="popup-table">
+                        <tr>
+                            <td class = "popup-title"><strong>${operator}</strong></td>
+                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                        </tr>
+                    </table>
+                </div>`;
+
+        // Create and show the popup
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(popupContent)
+            .addTo(map2);
+    });
+
+
+    // Change cursor when hovering over the layer
+    map2.on('mouseenter', 'interactive', () => {
+        map2.getCanvas().style.cursor = 'pointer';
+    });
+    map2.on('mouseleave', 'interactive', () => {
+        map2.getCanvas().style.cursor = '';
+    });
+
+    // Function to toggle collapsible sections with animated arrow
+    function togglePopupSection(header) {
+        const section = header.nextElementSibling;
+        const arrow = header.querySelector('.popup-arrow');
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            arrow.innerHTML = '▼'; // Change to down arrow when expanded
+        } else {
+            section.style.display = 'none';
+            arrow.innerHTML = '▶'; // Change back to sideways arrow when collapsed
+        }
+    }
+
+    map2.on('click', 'interactive-markers', (e) => {
+        const feature = e.features[0];
+        const properties = feature.properties;
+
+        // Extract properties, defaulting to 'N/A' if missing
+        const projectName = properties.project_name || 'Unknown';
+        const geoNote = properties.geo_note || '';
+        const location = properties.location || '';
+        const pipeline = properties.pipeline || '';
+        const operator = properties.operator || '';
+        const status = properties.status || '';
+        const whatsThePlan = properties.whats_the_plan || '';
+        const whatNow = properties.what_now || '';
+
+        // Define status color dynamically
+        let statusColor = "#fafafa"; // Default (white)
+        if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+        else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+        else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
+
+        // Create popup content with table and collapsible sections
+        const popupContent = `
+        <div class="popup-container">
+            <table class="popup-table">
+                <tr>
+                    <td class = "popup-title"><strong>${projectName}</strong></td>
+                    <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+                </tr>
+                <tr>
+                    <td> <span>${geoNote}</span></td>
+                    <td class = 'faint'> ${location}</td>
+                </tr>
+                <tr>
+                    <td> ${pipeline}</td>
+                    <td class = 'faint'> ${operator}</td>
+                </tr>
+            </table>
+
+            <h4 class="popup-header" onclick="togglePopupSection(this)">
+                <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+            </h4>
+            <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+
+            <h4 class="popup-header" onclick="togglePopupSection(this)">
+                <span class="popup-arrow">▶</span> WHAT NOW
+            </h4>
+            <div class="popup-section" style="display: none;">${whatNow}</div>
+        </div>
+    `;
+
+        // Create and show the popup
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(popupContent)
+            .addTo(map2);
+    });
+
+    // Change cursor when hovering over the layer
+    map2.on('mouseenter', 'interactive-markers', () => {
+        map2.getCanvas().style.cursor = 'pointer';
+    });
+    map2.on('mouseleave', 'interactive-markers', () => {
+        map2.getCanvas().style.cursor = '';
+    });
+
+</script>
+
+</html>
