@@ -398,7 +398,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: "The Iroquois project alone could generate <a href = 'https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20211220-5086&optimized=false'>$3.78 billion</a> in climate damages through 2050 and add the equivalent of <a href = 'https://www.scribd.com/document/833824324/Josh-Berman-Sierra-Club-Iroquois-ASF-Comments'>186,000 passenger cars</a> to the road in planet-warming gasses. It will also spew pollution into communities like Athens, a town in southeast central New York that filmmaker, Lisa Thomas, calls home.",
+            description: "The Iroquois project alone could generate <a href = 'https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20211220-5086&optimized=false'>$3.78 billion</a> in climate damages through 2050 and add the equivalent of <a href = 'https://www.scribd.com/document/833824324/Josh-Berman-Sierra-Club-Iroquois-ASF-Comments'>186,000 passenger cars</a> to the road in planet-warming gasses. It will also spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas calls home.",
             location: {
                 center: [-73.82212, 42.26607],
                 zoom: 14.39,
