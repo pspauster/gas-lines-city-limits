@@ -1387,242 +1387,242 @@
             }
         });
 
-        var map2 = new mapboxgl.Map({
-            container: 'map2',
-            style: config.style,
-            center: [-74.2179, 42.1994],
-            zoom: 6.75,
-            bearing: 0,
-            pitch: 30,
-            interactive: true,
-            projection: config.projection
-        });
+    //     var map2 = new mapboxgl.Map({
+    //         container: 'map2',
+    //         style: config.style,
+    //         center: [-74.2179, 42.1994],
+    //         zoom: 6.75,
+    //         bearing: 0,
+    //         pitch: 30,
+    //         interactive: true,
+    //         projection: config.projection
+    //     });
 
 
-        map2.on("load", function () {
-            map2.addSource('interactive-pipelines', {
-                type: 'geojson',
-                data: 'data/gas_infra.geojson',
-                //generateID: true
-            })
-            map2.addLayer({
-                'id': 'interactive',
-                'type': 'line',
-                'source': 'interactive-pipelines',
-                'paint': {
-                    'line-color': [
-                        'match',
-                        ['get', 'status'],
-                        'Approved', '#00FF00', // Green
-                        'In Progress', '#FFFF00', // Yellow
-                        'Not active', '#FF0000', // Red
-                        '#000000' // Default color (black) for unexpected values
-                    ],
-                    'line-width': 4, // Adjust line width if needed
-                },
-                'layout': {
-                    'line-join': "miter",
-                    'line-cap': "round"
-                } 
-            });
-            map2.addSource('interactive-points', {
-                type: 'geojson',
-                data: 'data/gas_infra_points.geojson'
-            })
-            map2.addLayer({
-                'id': 'interactive-markers',
-                'type': 'circle',
-                'source': 'interactive-points',
-                'filter': [
-                    'all',
-                    ['==', ['get', 'geo_type'], 'point'],  // Only "point" features
-                    ['!=', ['get', 'geo_type'], null]       // Exclude null values
-                ], // Filter to only include points
-                'paint': {
-                    'circle-color': [
-                        'match',
-                        ['get', 'status'],
-                        'Approved', '#00FF00', // Green
-                        'In Progress', '#FFFF00', // Yellow
-                        'Not active', '#FF0000', // Red
-                        '#000000' // Default color (black) for unexpected values
-                    ],
-                    'circle-radius': 6, // Adjust line width if needed
-                    'circle-stroke-width': 1,
-                    'circle-stroke-color':
-                        [
-                            'case',
-                            ['boolean', ['feature-state', 'hover'], false],
-                            "white",
-                            [
-                                'match',
-                                ['get', 'status'],
-                                'Approved', '#00FF00', // Green
-                                'In Progress', '#FFFF00', // Yellow
-                                'Not active', '#FF0000', // Red
-                                '#000000' // Default color (black) for unexpected values
-                            ]
-                        ]
-                }
-            });
+    //     map2.on("load", function () {
+    //         map2.addSource('interactive-pipelines', {
+    //             type: 'geojson',
+    //             data: 'data/gas_infra.geojson',
+    //             //generateID: true
+    //         })
+    //         map2.addLayer({
+    //             'id': 'interactive',
+    //             'type': 'line',
+    //             'source': 'interactive-pipelines',
+    //             'paint': {
+    //                 'line-color': [
+    //                     'match',
+    //                     ['get', 'status'],
+    //                     'Approved', '#00FF00', // Green
+    //                     'In Progress', '#FFFF00', // Yellow
+    //                     'Not active', '#FF0000', // Red
+    //                     '#000000' // Default color (black) for unexpected values
+    //                 ],
+    //                 'line-width': 4, // Adjust line width if needed
+    //             },
+    //             'layout': {
+    //                 'line-join': "miter",
+    //                 'line-cap': "round"
+    //             } 
+    //         });
+    //         map2.addSource('interactive-points', {
+    //             type: 'geojson',
+    //             data: 'data/gas_infra_points.geojson'
+    //         })
+    //         map2.addLayer({
+    //             'id': 'interactive-markers',
+    //             'type': 'circle',
+    //             'source': 'interactive-points',
+    //             'filter': [
+    //                 'all',
+    //                 ['==', ['get', 'geo_type'], 'point'],  // Only "point" features
+    //                 ['!=', ['get', 'geo_type'], null]       // Exclude null values
+    //             ], // Filter to only include points
+    //             'paint': {
+    //                 'circle-color': [
+    //                     'match',
+    //                     ['get', 'status'],
+    //                     'Approved', '#00FF00', // Green
+    //                     'In Progress', '#FFFF00', // Yellow
+    //                     'Not active', '#FF0000', // Red
+    //                     '#000000' // Default color (black) for unexpected values
+    //                 ],
+    //                 'circle-radius': 6, // Adjust line width if needed
+    //                 'circle-stroke-width': 1,
+    //                 'circle-stroke-color':
+    //                     [
+    //                         'case',
+    //                         ['boolean', ['feature-state', 'hover'], false],
+    //                         "white",
+    //                         [
+    //                             'match',
+    //                             ['get', 'status'],
+    //                             'Approved', '#00FF00', // Green
+    //                             'In Progress', '#FFFF00', // Yellow
+    //                             'Not active', '#FF0000', // Red
+    //                             '#000000' // Default color (black) for unexpected values
+    //                         ]
+    //                     ]
+    //             }
+    //         });
 
-        }
-        )
+    //     }
+    //     )
 
-        map2.on('click', 'interactive', (e) => {
-            const feature = e.features[0];
-            const properties = feature.properties;
+    //     map2.on('click', 'interactive', (e) => {
+    //         const feature = e.features[0];
+    //         const properties = feature.properties;
 
-            // Extract properties, defaulting to 'N/A' if missing
-            const projectName = properties.project_name || 'Unknown';
-            const geoNote = properties.geo_note || '';
-            const location = properties.location || '';
-            const pipeline = properties.pipeline || '';
-            const operator = properties.operator || '';
-            const status = properties.status || '';
-            const whatsThePlan = properties.whats_the_plan || '';
-            const whatNow = properties.what_now || '';
+    //         // Extract properties, defaulting to 'N/A' if missing
+    //         const projectName = properties.project_name || 'Unknown';
+    //         const geoNote = properties.geo_note || '';
+    //         const location = properties.location || '';
+    //         const pipeline = properties.pipeline || '';
+    //         const operator = properties.operator || '';
+    //         const status = properties.status || '';
+    //         const whatsThePlan = properties.whats_the_plan || '';
+    //         const whatNow = properties.what_now || '';
 
-            // Define status color dynamically
-            let statusColor = "#fafafa"; // Default (white)
-            if (status.toLowerCase() === "approved") statusColor = "#00FF00";
-            else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
-            else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
+    //         // Define status color dynamically
+    //         let statusColor = "#fafafa"; // Default (white)
+    //         if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+    //         else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+    //         else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
 
-            // Create popup content with table and collapsible sections
-            let popupContent = ``;
-            if (properties.proposed === "Yes") popupContent = `
-                <div class="popup-container">
-                    <table class="popup-table">
-                        <tr>
-                            <td class = "popup-title"><strong>${projectName}</strong></td>
-                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
-                        </tr>
-                        <tr>
-                            <td> <span>${geoNote}</span></td>
-                            <td class = 'faint'> ${location}</td>
-                        </tr>
-                        <tr>
-                            <td> ${pipeline}</td>
-                            <td class = 'faint'> ${operator}</td>
-                        </tr>
-                    </table>
+    //         // Create popup content with table and collapsible sections
+    //         let popupContent = ``;
+    //         if (properties.proposed === "Yes") popupContent = `
+    //             <div class="popup-container">
+    //                 <table class="popup-table">
+    //                     <tr>
+    //                         <td class = "popup-title"><strong>${projectName}</strong></td>
+    //                         <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <td> <span>${geoNote}</span></td>
+    //                         <td class = 'faint'> ${location}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <td> ${pipeline}</td>
+    //                         <td class = 'faint'> ${operator}</td>
+    //                     </tr>
+    //                 </table>
 
-                    <h4 class="popup-header" onclick="togglePopupSection(this)">
-                        <span class="popup-arrow">▶</span> WHAT'S THE PLAN
-                    </h4>
-                    <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+    //                 <h4 class="popup-header" onclick="togglePopupSection(this)">
+    //                     <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+    //                 </h4>
+    //                 <div class="popup-section" style="display: none;">${whatsThePlan}</div>
 
-                    <h4 class="popup-header" onclick="togglePopupSection(this)">
-                        <span class="popup-arrow">▶</span> WHAT NOW
-                    </h4>
-                    <div class="popup-section" style="display: none;">${whatNow}</div>
-                </div>
-            `;
-            else if (properties.propsed !== "Yes") popupContent = `                
-            <div class="popup-container">
-                    <table class="popup-table">
-                        <tr>
-                            <td class = "popup-title"><strong>${operator}</strong></td>
-                            <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
-                        </tr>
-                    </table>
-                </div>`;
+    //                 <h4 class="popup-header" onclick="togglePopupSection(this)">
+    //                     <span class="popup-arrow">▶</span> WHAT NOW
+    //                 </h4>
+    //                 <div class="popup-section" style="display: none;">${whatNow}</div>
+    //             </div>
+    //         `;
+    //         else if (properties.propsed !== "Yes") popupContent = `                
+    //         <div class="popup-container">
+    //                 <table class="popup-table">
+    //                     <tr>
+    //                         <td class = "popup-title"><strong>${operator}</strong></td>
+    //                         <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+    //                     </tr>
+    //                 </table>
+    //             </div>`;
 
-            // Create and show the popup
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML(popupContent)
-                .addTo(map2);
-        });
+    //         // Create and show the popup
+    //         new mapboxgl.Popup()
+    //             .setLngLat(e.lngLat)
+    //             .setHTML(popupContent)
+    //             .addTo(map2);
+    //     });
 
 
-        // Change cursor when hovering over the layer
-        map2.on('mouseenter', 'interactive', () => {
-            map2.getCanvas().style.cursor = 'pointer';
-        });
-        map2.on('mouseleave', 'interactive', () => {
-            map2.getCanvas().style.cursor = '';
-        });
+    //     // Change cursor when hovering over the layer
+    //     map2.on('mouseenter', 'interactive', () => {
+    //         map2.getCanvas().style.cursor = 'pointer';
+    //     });
+    //     map2.on('mouseleave', 'interactive', () => {
+    //         map2.getCanvas().style.cursor = '';
+    //     });
 
-        // Function to toggle collapsible sections with animated arrow
-        function togglePopupSection(header) {
-            const section = header.nextElementSibling;
-            const arrow = header.querySelector('.popup-arrow');
+    //     // Function to toggle collapsible sections with animated arrow
+    //     function togglePopupSection(header) {
+    //         const section = header.nextElementSibling;
+    //         const arrow = header.querySelector('.popup-arrow');
 
-            if (section.style.display === 'none') {
-                section.style.display = 'block';
-                arrow.innerHTML = '▼'; // Change to down arrow when expanded
-            } else {
-                section.style.display = 'none';
-                arrow.innerHTML = '▶'; // Change back to sideways arrow when collapsed
-            }
-        }
+    //         if (section.style.display === 'none') {
+    //             section.style.display = 'block';
+    //             arrow.innerHTML = '▼'; // Change to down arrow when expanded
+    //         } else {
+    //             section.style.display = 'none';
+    //             arrow.innerHTML = '▶'; // Change back to sideways arrow when collapsed
+    //         }
+    //     }
 
-        map2.on('click', 'interactive-markers', (e) => {
-            const feature = e.features[0];
-            const properties = feature.properties;
+    //     map2.on('click', 'interactive-markers', (e) => {
+    //         const feature = e.features[0];
+    //         const properties = feature.properties;
 
-            // Extract properties, defaulting to 'N/A' if missing
-            const projectName = properties.project_name || 'Unknown';
-            const geoNote = properties.geo_note || '';
-            const location = properties.location || '';
-            const pipeline = properties.pipeline || '';
-            const operator = properties.operator || '';
-            const status = properties.status || '';
-            const whatsThePlan = properties.whats_the_plan || '';
-            const whatNow = properties.what_now || '';
+    //         // Extract properties, defaulting to 'N/A' if missing
+    //         const projectName = properties.project_name || 'Unknown';
+    //         const geoNote = properties.geo_note || '';
+    //         const location = properties.location || '';
+    //         const pipeline = properties.pipeline || '';
+    //         const operator = properties.operator || '';
+    //         const status = properties.status || '';
+    //         const whatsThePlan = properties.whats_the_plan || '';
+    //         const whatNow = properties.what_now || '';
 
-            // Define status color dynamically
-            let statusColor = "#fafafa"; // Default (white)
-            if (status.toLowerCase() === "approved") statusColor = "#00FF00";
-            else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
-            else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
+    //         // Define status color dynamically
+    //         let statusColor = "#fafafa"; // Default (white)
+    //         if (status.toLowerCase() === "approved") statusColor = "#00FF00";
+    //         else if (status.toLowerCase() === "in progress") statusColor = "#FFFF00";
+    //         else if (status.toLowerCase() === "not active") statusColor = "#FF0000";
 
-            // Create popup content with table and collapsible sections
-            const popupContent = `
-        <div class="popup-container">
-            <table class="popup-table">
-                <tr>
-                    <td class = "popup-title"><strong>${projectName}</strong></td>
-                    <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
-                </tr>
-                <tr>
-                    <td> <span>${geoNote}</span></td>
-                    <td class = 'faint'> ${location}</td>
-                </tr>
-                <tr>
-                    <td> ${pipeline}</td>
-                    <td class = 'faint'> ${operator}</td>
-                </tr>
-            </table>
+    //         // Create popup content with table and collapsible sections
+    //         const popupContent = `
+    //     <div class="popup-container">
+    //         <table class="popup-table">
+    //             <tr>
+    //                 <td class = "popup-title"><strong>${projectName}</strong></td>
+    //                 <td class = "popup-status" style="color: ${statusColor}; font-weight: bold;">${status.toUpperCase()}</td>
+    //             </tr>
+    //             <tr>
+    //                 <td> <span>${geoNote}</span></td>
+    //                 <td class = 'faint'> ${location}</td>
+    //             </tr>
+    //             <tr>
+    //                 <td> ${pipeline}</td>
+    //                 <td class = 'faint'> ${operator}</td>
+    //             </tr>
+    //         </table>
 
-            <h4 class="popup-header" onclick="togglePopupSection(this)">
-                <span class="popup-arrow">▶</span> WHAT'S THE PLAN
-            </h4>
-            <div class="popup-section" style="display: none;">${whatsThePlan}</div>
+    //         <h4 class="popup-header" onclick="togglePopupSection(this)">
+    //             <span class="popup-arrow">▶</span> WHAT'S THE PLAN
+    //         </h4>
+    //         <div class="popup-section" style="display: none;">${whatsThePlan}</div>
 
-            <h4 class="popup-header" onclick="togglePopupSection(this)">
-                <span class="popup-arrow">▶</span> WHAT NOW
-            </h4>
-            <div class="popup-section" style="display: none;">${whatNow}</div>
-        </div>
-    `;
+    //         <h4 class="popup-header" onclick="togglePopupSection(this)">
+    //             <span class="popup-arrow">▶</span> WHAT NOW
+    //         </h4>
+    //         <div class="popup-section" style="display: none;">${whatNow}</div>
+    //     </div>
+    // `;
 
-            // Create and show the popup
-            new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML(popupContent)
-                .addTo(map2);
-        });
+    //         // Create and show the popup
+    //         new mapboxgl.Popup()
+    //             .setLngLat(e.lngLat)
+    //             .setHTML(popupContent)
+    //             .addTo(map2);
+    //     });
 
-        // Change cursor when hovering over the layer
-        map2.on('mouseenter', 'interactive-markers', () => {
-            map2.getCanvas().style.cursor = 'pointer';
-        });
-        map2.on('mouseleave', 'interactive-markers', () => {
-            map2.getCanvas().style.cursor = '';
-        });
+    //     // Change cursor when hovering over the layer
+    //     map2.on('mouseenter', 'interactive-markers', () => {
+    //         map2.getCanvas().style.cursor = 'pointer';
+    //     });
+    //     map2.on('mouseleave', 'interactive-markers', () => {
+    //         map2.getCanvas().style.cursor = '';
+    //     });
 
     </script>
 
