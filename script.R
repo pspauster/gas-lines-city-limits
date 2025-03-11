@@ -98,5 +98,7 @@ library(tigris)
 ny_shapefile <- states(cb = TRUE) %>% 
   filter(NAME == "New York")
 
+mapview(ny_shapefile)
+
 # Save the shapefile to a local file
 st_write(ny_shapefile, "data/New_York_State.geojson", append = F)
