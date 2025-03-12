@@ -1,7 +1,7 @@
 var config = {
     style: 'mapbox://styles/mapbox/dark-v11',
     // leave commented to use Mapbox Standard Style
-    accessToken: 'pk.eyJ1IjoiY2l0eWxpbWl0cyIsImEiOiJjbTg0b3YzMmUwMWx0MmpwcGQ4YXZvYmQyIn0.BRb0adcfhPaqGjWjonM5RA',
+    accessToken: 'pk.eyJ1IjoiY2l0eWxpbWl0cyIsImEiOiJjbTg0bjN5ejMxZmZvMmpvcmgyM3VraDZjIn0._m4vmvlZqC5FYJ73cPFO_g',
     showMarkers: false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
