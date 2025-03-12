@@ -18,7 +18,7 @@ var config = {
     //title: 'HEADLINE GOES HERE',
     //subtitle: 'Subtitle is a little more verbose than the headline.',
     //byline: 'By Mariana Simoes\nDeveloped by Patrick Spauster',
-    footer: "Developed by Patrick Spauster for City Limits <br> Source: Pipeline data from <a href='https://atlas.eia.gov/datasets/4a158d2113f145039f71b80d07e2c19c_0/explore?location=41.676333%2C-72.866541%2C7.00'>US Energy Information Administration</a> and author's analysis. Adapted from <a href='https://github.com/mapbox/storytelling' target='_blank'>Mapbox Storytelling</a> template.",
+    footer: "Developed by Patrick Spauster for City Limits <br> Source: Pipeline data from <a target='_blank' href='https://atlas.eia.gov/datasets/4a158d2113f145039f71b80d07e2c19c_0/explore?location=41.676333%2C-72.866541%2C7.00'>US Energy Information Administration</a> and author's analysis. Adapted from <a target='_blank'href='https://github.com/mapbox/storytelling' target='_blank'>Mapbox Storytelling</a> template.",
     chapters: [
         {
             id: 'photo-title',
@@ -205,7 +205,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: "But <a href = 'https://www.nyiso.com/documents/20142/2223020/2024-Power-Trends.pdf'>96 percent</a> of the downstate region is still powered by fossil fuels, through pipelines like these for natural gas. In total, only about <a href = 'https://www.nyiso.com/documents/20142/2226333/2024-Gold-Book-Public.pdf'>29 percent</a> of the entire Empire State’s electricity comes from renewable sources.",
+            description: "But <a target='_blank' href = 'https://www.nyiso.com/documents/20142/2223020/2024-Power-Trends.pdf'>96 percent</a> of the downstate region is still powered by fossil fuels, through pipelines like these for natural gas. In total, only about <a target='_blank'href = 'https://www.nyiso.com/documents/20142/2226333/2024-Gold-Book-Public.pdf'>29 percent</a> of the entire Empire State’s electricity comes from renewable sources.",
             location: {
                 center: [-74.0179, 41.7994],
                 zoom: 7.25,
@@ -398,7 +398,7 @@ var config = {
             hidden: false,
             //title: 'New York States',
             //image: './assets/san-fran.jpeg',
-            description: "The Iroquois project alone could generate <a href = 'https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20211220-5086&optimized=false'>$3.78 billion</a> in climate damages through 2050 and add the equivalent of <a href = 'https://www.scribd.com/document/833824324/Josh-Berman-Sierra-Club-Iroquois-ASF-Comments'>186,000 passenger cars</a> to the road in planet-warming gasses. It will also spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas calls home.",
+            description: "The Iroquois project alone could generate <a target='_blank' href = 'https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20211220-5086&optimized=false'>$3.78 billion</a> in climate damages through 2050 and add the equivalent of <a target='_blank' href = 'https://www.scribd.com/document/833824324/Josh-Berman-Sierra-Club-Iroquois-ASF-Comments'>186,000 passenger cars</a> to the road in planet-warming gasses. It will also spew pollution into communities like Athens, a town in southeast central New York that filmmaker Lisa Thomas calls home.",
             location: {
                 center: [-73.82212, 42.26607],
                 zoom: 14.39,
