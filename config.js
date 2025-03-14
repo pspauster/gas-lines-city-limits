@@ -57,6 +57,10 @@ var config = {
                 {
                     layer: 'ny-proposed-points',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -78,6 +82,10 @@ var config = {
                 },
                 {
                     layer: 'ny-proposed-points',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
                     opacity: 0,
                 }
             ]
@@ -119,6 +127,10 @@ var config = {
                 {
                     layer: 'ny-proposed-points',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -140,6 +152,10 @@ var config = {
                 },
                 {
                     layer: 'ny-proposed-points',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
                     opacity: 0,
                 }
             ]
@@ -190,6 +206,10 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed-new',
                     opacity: 0
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -240,6 +260,10 @@ var config = {
                 {
                     layer: 'ny-proposed-points',
                     opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -289,6 +313,10 @@ var config = {
                 {
                     layer: 'ny-pipelines-proposed-new',
                     opacity: 1
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -338,7 +366,11 @@ var config = {
                 {
                     layer: 'ny-points-iroquois',
                     opacity: 1,
-                },
+                },,
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
+                }
             ],
             onChapterExit: [
                 // {
@@ -379,7 +411,11 @@ var config = {
                 {
                     layer: 'ny-points-iroquois',
                     opacity: 1,
-                },
+                },,
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
+                }
             ],
             onChapterExit: [
                 {
@@ -420,6 +456,10 @@ var config = {
                 {
                     layer: 'ny-points-iroquois',
                     opacity: 1,
+                },
+                {
+                    layer: 'ny-compressors',
+                    opacity: 0,
                 }
             ],
             onChapterExit: [
@@ -469,6 +509,10 @@ var config = {
                 },
                 {
                     layer: 'ny-proposed-points',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
                     opacity: 1,
                 }
             ],
@@ -491,6 +535,10 @@ var config = {
                 },
                 {
                     layer: 'ny-proposed-points',
+                    opacity: 0,
+                },
+                {
+                    layer: 'ny-compressors',
                     opacity: 0,
                 }
             ]

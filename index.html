@@ -509,7 +509,7 @@
             admitted that the Empire State would probably only hit this goal by 2033.
         </p>
         <p>“I think that it's very much down to a failure of leadership by Governor [Kathy Hochul] to take seriously our
-            legal mandate to hit our climate goals,” said Michael Paulson, co-chair of the Public Power Coalition, an
+            legal mandate to hit our climate goals,” said Michael Paulson, associate director of Sane Energy Project and co-chair of the Public Power Coalition, an
             environmental group that supports the shift to renewable energy.
         </p>
         <p>
@@ -648,9 +648,7 @@
                 recent report</a>. But that’s still falling short of what’s needed to move off gas.
         </p>
         <p>
-            For Schue, the state is caught in a conundrum: while it wants to support the shift away from fossil fuels,
-            it doesn’t have enough clean energy to do it. So it's forced to approve projects like Iroquois to keep
-            electricity flowing.
+            Although Schue doesn't support the ExC Project, he says the state is caught in a conundrum: while it wants to back the shift away from fossil fuels, it doesn’t have enough clean energy to do it.* So it's forced to approve projects like Iroquois to keep electricity flowing.
         </p>
         <p>
             “People want to demonize Gov. Hochul right now about this decision. But I don't think that's fair because
@@ -780,6 +778,7 @@
             York would be at the leading edge on that. But there's a lot of pressure pushing the other way right now.”
         </p>
         <p></p>
+        <p class = "photo-caption">*This sentence was updated to clarify Schue's position on the Iroquois pipeline enhancement project.</p>
         <p class = "photo-caption">To reach the reporter behind this story, contact Mariana@citylimits.org. To reach the editor, contact Jeanmarie@citylimits.org</p>
     </div>
     <div class = "banner-bottom">
@@ -1084,6 +1083,20 @@
                     'circle-stroke-color': '#FF0000',
                     'circle-color': '#FF0000'
                 }
+            })
+            map.addLayer({
+                'id': 'ny-compressors',
+                'type': 'circle',
+                'source': 'ny-stations',
+                'paint': {
+                    'circle-opacity': 0.6,
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': '#FF0000',
+                    'circle-color': '#FF0000'
+                },
+                'filter' : [
+                    '!=', 'Company', 'Danskammer LLC '
+                ]
             })
             map.addLayer({
                 'id': 'ny-points-iroquois',
